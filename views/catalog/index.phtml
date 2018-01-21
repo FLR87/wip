@@ -1,0 +1,24 @@
+<body>
+<div id="t4">
+    <table>
+        <tr>
+            <th><h2>Анамегатор топлив и масел </h2></th>
+        </tr>
+        <tr>
+            <td class="t4_card">
+                <ol>
+                    <?php foreach ($this->products as $item): ?>
+
+                        <li>
+                            <a href='/catalog/<?= $item['cat_id'] ?>/<?= $item['pr_short_name'] ?>'
+                               title=""><?php echo $item['pr_name'] ?></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ol>
+            </td>
+        </tr>
+    </table>
+</div>
+</div>
+</div>
+</body>

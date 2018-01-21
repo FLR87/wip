@@ -1,0 +1,20 @@
+<body>
+<div id="main">
+    <table>
+        <tr>
+            <th id="main_title" colspan="4"><h1>Анамегаторы топлив Т4</h1></th>
+        </tr>
+        <tr>
+            <?php foreach ($this->categories as $item): ?>
+                <td class="main_card">
+                    <img src="<?php echo $item['cat_image']?>">
+                    <a href='/catalog/<?php echo $item['cat_id'] ?>' title=""><?php echo $item['cat_name'] ?></a>
+                    <small><?php echo $item['cat_small_discription']?></small>
+                </td>
+            <?php endforeach; ?>
+        </tr>
+    </table>
+</div>
+</div>
+</div>
+</body>

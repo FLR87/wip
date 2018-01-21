@@ -1,0 +1,123 @@
+body{
+    background-color: white;
+}
+#wrapper{
+    width: 1100px;
+    height: auto;
+    margin: auto;
+}
+#header{
+    width: 100%;
+    height: auto;
+}
+#content{
+    width: 100%;
+    height: auto;
+}
+#nav{
+    width: 100%;
+    height: auto;
+    background-color: #D4D5ED;
+    border-radius: 10px;
+}
+#nav table{
+    width: 200px;
+    height: auto;
+}
+#nav td{
+    width: 120px;
+    height: auto;
+    border-right: 1px solid white;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 10px;
+}
+#nav td:nth-child(n+1){
+    padding: 10px;
+}
+#nav td:nth-child(n+1):hover{
+    background-color: rgba(0,0,0,0.1);
+}
+#lmenu{
+    width: 220px;
+    height: auto;
+    float: left;
+    font-size: 18px;
+}
+#lmenu ul{
+    padding: 0;
+}
+#lmenu ul li{
+    list-style: none;
+    border-bottom: 2px solid #444;
+    padding: 5px;
+}
+#lmenu table{
+    width: 220px;
+    height: 100px;
+    float: left;
+    border: 1px solid #444;
+    background-color: #D4D5ED;
+    border-radius: 10px;
+    margin: 5px;
+}
+#main{
+    width: calc(100% - 230px);
+    height: auto;
+    float: right;
+}
+.main_card{
+    width: 210px;
+    height: 400px;
+    padding: 0;
+    margin: 0;
+    border: 2px solid #444;
+    background-color: #D4D5ED;
+}
+.main_card h3{
+    text-align: center;
+}
+#main table img{
+    border-bottom: 2px solid #444;
+}
+#t4 #t6 #mp8 #mp10{
+    float: right;
+}
+#t4 table{
+    width: auto;
+    padding: 5%;
+}
+table{
+    border-spacing: 10px;
+}
+#footer{
+    width: 1100px;
+    height: auto;
+    clear: both;
+    margin: auto;
+    background-color: #D4D5ED;
+}
+#footer table{
+    width: 1100px;
+    height: auto;
+}
+.contact{
+    width: 240px;
+    height: auto;
+    padding: 20px;
+}
+.contact h5{
+    margin: 0;
+    font-size: 18px;
+    color: blue;
+}
+.TM{
+    text-align: center;
+    height: 15px;
+}
+a, a:visited{
+    color: blue; text-decoration: none;
+}
+*{
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;/*Весь текст на сайте станет таким*/
+}
