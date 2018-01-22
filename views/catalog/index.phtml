@@ -1,3 +1,7 @@
+<pre>
+<?php print_r($this);?>
+</pre>
+
 <body>
 <div id="t4">
     <table>
@@ -7,11 +11,11 @@
         <tr>
             <td class="t4_card">
                 <ol>
-                    <?php foreach ($this->products as $item): ?>
+                    <?php foreach ($this->news as $item): ?>
 
                         <li>
-                            <a href='/catalog/<?= $item['cat_id'] ?>/<?= $item['pr_short_name'] ?>'
-                               title=""><?php echo $item['pr_name'] ?></a>
+                            <a href='/catalog/<?= $item['cat_id'] ?>/<?= $item['nw_short_name'] ?>'
+                               title=""><?php echo $item['nw_name'] ?></a>
                         </li>
                     <?php endforeach; ?>
                 </ol>

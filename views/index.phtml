@@ -1,20 +1,173 @@
-<body>
-<div id="main">
-    <table>
-        <tr>
-            <th id="main_title" colspan="4"><h1>Анамегаторы топлив Т4</h1></th>
-        </tr>
-        <tr>
-            <?php foreach ($this->categories as $item): ?>
-                <td class="main_card">
-                    <img src="<?php echo $item['cat_image']?>">
-                    <a href='/catalog/<?php echo $item['cat_id'] ?>' title=""><?php echo $item['cat_name'] ?></a>
-                    <small><?php echo $item['cat_small_discription']?></small>
-                </td>
-            <?php endforeach; ?>
-        </tr>
-    </table>
+<!--<body>-->
+<!--<div id="main">-->
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <th id="main_title" colspan="4"><h1>Анамегаторы топлив Т4</h1></th>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<?php //foreach ($this->categories as $item): ?>
+<!--    <td class="main_card">-->
+<!--        <img src="--><?php //echo $item['cat_image'] ?><!--">-->
+<!--        <a href='/catalog/--><?php //echo $item['cat_id'] ?><!--' title="">--><?php //echo $item['cat_name'] ?><!--</a>-->
+<!--        <small>--><?php //echo $item['cat_small_discription'] ?><!--</small>-->
+<!--    </td>-->
+<?php //endforeach; ?>
+<!--        </tr>-->
+<!--    </table>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</body>-->
+
+<!--NEW INDEX-->
+
+<pre>
+<?php print_r($this); ?>
+</pre>
+
+<div class="main-content">
+    <div class="main-content-inner content-width">
+
+        <div class="column-container">
+
+            <div class="column-one-third">
+                <div class="icons-column">
+                    <!-- Icon Backing -->
+                    <div class="icon-backing" style="background-color: #916C6C;">
+                        <!-- Icon -->
+                        <i class="fa fa-heart"></i>
+                    </div>
+                </div>
+                <div class="content-column">
+                    <!-- Title -->
+                    <h3>Дизайн</h3>
+                    <!-- Text -->
+                    <p>Интересно отметить, что каждая сфера рынка притягивает план размещения. </p>
+                </div>
+            </div>
+
+            <div class="column-one-third">
+                <div class="icons-column">
+                    <!-- Icon Backing -->
+                    <div class="icon-backing" style="background-color: #7089AD;">
+                        <!-- Icon -->
+                        <i class="fa fa-font"></i>
+                    </div>
+                </div>
+                <div class="content-column">
+                    <!-- Title -->
+                    <h3>Верстка</h3>
+                    <!-- Text -->
+                    <p>Интересно отметить, что каждая сфера рынка притягивает план размещения. </p>
+                </div>
+            </div>
+
+            <div class="column-one-third">
+                <div class="icons-column">
+                    <!-- Icon Backing -->
+                    <div class="icon-backing" style="background-color: #63885F;">
+                        <!-- Icon -->
+                        <i class="fa fa-fullscreen"></i>
+                    </div>
+                </div>
+                <div class="content-column">
+                    <!-- Title -->
+                    <h3>Разработка</h3>
+                    <!-- Text -->
+                    <p>Интересно отметить, что каждая сфера рынка притягивает план размещения. </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <h3 class="section-title">Новости дня</h3>
+
+        <div id="portfolio-nav" class="carousel-nav">
+            <div class="back"></div>
+            <div class="next"></div>
+        </div>
+
+        <div class="carousel">
+            <ul id="portfolio-carousel" class="slider-container">
+
+
+                <!--                --><?php //foreach ($this->categories as $item): ?>
+                <!--                    <td class="main_card">-->
+                <!--                        <img src="--><?php //echo $item['cat_image']?><!--">-->
+                <!--                        <a href='/catalog/--><?php //echo $item['cat_id'] ?><!--' title="">-->
+                <?php //echo $item['cat_name'] ?><!--</a>-->
+                <!--                        <small>--><?php //echo $item['cat_small_discription']?><!--</small>-->
+                <!--                    </td>-->
+                <!--                --><?php //endforeach; ?>
+
+
+                <!-- One Fourth -->
+                <?php foreach ($this->newstop as $item): ?>
+                    <li class="column-one-fourth portfolio-item branding">
+                        <!-- Image -->
+                        <a href="<?php echo $item['cat_id'] ?>" class="image-link"><img alt=""
+                                                                                        src="<?php echo $item['cat_image'] ?>"
+                                                                                        class="fullwidth">
+                        </a>
+                        <!-- Title -->
+                        <h3><a href="#"><?php echo $item['nw_name'] ?></a></h3>
+                        <!-- Tags -->
+                        <div class="tags"><?php echo $item['cat_name'] ?></div>
+                    </li>
+                <?php endforeach; ?>
+                <!-- END One Fourth -->
+
+
+            </ul>
+        </div>
+
+        <div class="column-container">
+            <div class="column-three-qtr">
+                <div class="divider"></div>
+                <h3 class="section-title">Последние новости</h3>
+                <div id="blog-nav" class="carousel-nav">
+                    <div class="back"></div>
+                    <div class="next"></div>
+                </div>
+                <div class="carousel">
+                    <ul id="blog-carousel" class="slider-container">
+
+                        <!-- One Fourth -->
+                        <?php foreach ($this->newslatest as $item): ?>
+                            <li class="column-one-fourth">
+                                <!-- Image -->
+                                <a href="<?php echo $item['cat_id'] ?>" class="image-link"><img alt=""
+                                                                                                src="<?php echo $item['cat_image'] ?>"
+                                                                                                class="fullwidth">
+                                </a>
+                                <!-- Title -->
+                                <h3><a href="<?php echo $item['cat_id'] ?>"><?php echo $item['nw_name'] ?></a></h3>
+                                <!-- Date -->
+                                <div class="date"><?php echo $item['nw_date'] ?></div>
+                                <!-- Excerpt -->
+                                <p><?php echo $item['nw_small_discription'] ?></p>
+                                <!-- Read More Link -->
+                                <a href="<?php echo $item['cat_id'] ?>">Подробнее</a>
+                            </li>
+                        <?php endforeach; ?>
+                        <!-- END One Fourth -->
+
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="column-one-fourth">
+
+                <div class="divider"></div>
+
+
+            </div>
+
+        </div>
+
+    </div>
 </div>
-</div>
-</div>
-</body>

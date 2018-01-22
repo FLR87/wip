@@ -24,7 +24,7 @@ class Router // описание класса Router
         foreach ($this->routes as $uriPattern => $path) {
             if (preg_match("~$uriPattern~", $uri)) {
 
-                //'catalog/([0-9]+)' => 'product/detail/$1/',
+                //'catalog/([0-9]+)' => 'news/detail/$1/',
                 // с помощью preg_replace подставляем рег выражения из routes.php к $uri
                 $internalRoute = preg_replace("`$uriPattern`", $path, $uri);
 
