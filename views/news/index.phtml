@@ -1,1 +1,146 @@
-echo 111;
+<!--<pre>-->
+<?php //print_r($this); ?>
+<!--</pre>-->
+
+
+
+<!-- Main Content -->
+
+<div class="main-content">
+    <div class="main-content-inner content-width">
+
+
+        <!-- Main Column / Sidebar -->
+
+        <div class="column-container">
+
+
+            <!-- Main Column -->
+
+            <div class="column-three-qtr">
+
+
+                <!-- Blog Post -->
+
+                <?php foreach ($this->newspost as $item): ?>
+
+                <div class="blog-post actual-post">
+                    <!-- Title -->
+                    <h1><?php echo $item['nw_name'] ?></h1>
+
+                    <!-- Content -->
+
+                    <div class="blog-content">
+                        <!-- Paragraph -->
+                        <p><?php echo $item['nw_small_discription'] ?></p>
+
+                        <div class="media">
+                            <div id="portfolio-blog-slider-container">
+
+                                <div id="portfolio-blog-slider">
+
+                                    <!-- Actual Images -->
+
+                                    <img alt="WTF?! Where is a damn image gone?!" src="<?php echo $item['nw_image'] ?>" class="fullwidth">
+
+                                    <!-- END Actual Images -->
+
+                                </div>
+
+
+                                <!-- Slide Controls -->
+
+                                <div class="portfolio-blog-slider-controls">
+                                    <div id="portfolio-blog-slider-prev"></div>
+                                    <div id="portfolio-blog-slider-next"></div>
+                                </div>
+
+                                <!-- END Slide Controls -->
+
+
+                            </div>
+                        </div>
+
+                        <!-- END Image -->
+
+
+                        <!-- H3 Title -->
+                        <h3></h3>
+                        <!-- Paragraph -->
+                        <p><?php echo $item['nw_discription'] ?></p>
+
+                    </div>
+
+                    <!-- END Content -->
+
+
+                </div>
+                <?php endforeach; ?>
+                <!-- END Blog Post -->
+
+
+
+                <!-- Share Links -->
+
+                <ul class="post-sharing">
+                    <li><a href="#"><i class="fa fa-facebook"></i><div class="tooltip">Поделиться в Facebook</div></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i><div class="tooltip">Поделиться в Twitter</div></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-square"></i><div class="tooltip">Поделиться в LinkedIn</div></a></li>
+                    <li><a href="#"><i class="fa fa-pinterest"></i><div class="tooltip">Поделиться в Pinterest</div></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i><div class="tooltip">Поделиться в Google+</div></a></li>
+                </ul>
+
+                <!-- END Share Links -->
+
+
+
+                <!-- Divider -->
+
+                <div class="divider"></div>
+
+                <!-- END Divider -->
+
+
+            </div>
+
+            <!-- END Main Column -->
+
+
+
+            <!-- Sidebar -->
+
+            <div class="column-one-fourth sidebar">
+
+                <!-- Latest Project -->
+                <?php foreach ($this->newstopest as $item): ?>
+                    <div class="sidebar-widget project">
+                        <!-- Title -->
+                        <h3>Новость дня</h3>
+                        <!-- Image -->
+                        <a href="/news/<?php echo $item['nw_id'] ?>" class="image-link"><img alt="" src="<?php echo $item['nw_image'] ?>" class="fullwidth"></a>
+                        <!-- Project Title -->
+                        <h3 class="sub-title"><a href="/news/<?php echo $item['nw_id'] ?>"><?php echo $item['nw_name'] ?></a></h3>
+                        <!-- Tags -->
+                        <div class="tags"><?php echo $item['cat_name'] ?></div>
+                    </div>
+                <?php endforeach; ?>
+
+                <!-- END Latest Project -->
+
+
+            </div>
+
+            <!-- END Sidebar -->
+
+
+        </div>
+
+        <!-- END Main Column / Sidebar -->
+
+
+    </div>
+</div>
+
+<!-- END Main Content -->
+
+<!--echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1111111111111111111111111111;-->

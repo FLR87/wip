@@ -1,23 +1,40 @@
 <?php
 
-include_once ROOT . '/model/News.php';
 include_once ROOT . '/model/Category.php';
+include_once ROOT . '/model/News.php';
+include_once ROOT . '/model/Partners.php';
 include_once ROOT . '/controllers/Controller.php';
 
 class NewsController extends Controller
 {
-//    public function actionIndex($categoryId)
+//    public function actionIndex($newsId)
 //    {
-//        $news = Product::getProductsByCategoryId($categoryId);
+//        $news = News::getNewsByCategoryId($newsId);
 //
 //        $this->view->news = $news;
 //
-//        $this->view->generate('template_view.php', 'catalog/index.phtml');
+//        $this->view->generate('template_view.php', '/news/index.phtml');
 //
-//        require_once(ROOT . '/views/catalog/index.phtml');
+////        require_once(ROOT . '/views/catalog/index.phtml');
 //
 //        return true;
 //    }
+
+    public function actionView($newsId) //функция которая передает список категорий из БД
+    {
+//        $categories = Category::getCategoryList(); //поключаем функцию -> Category.php
+        $newspost= News::getNewsByNewsId($newsId);
+//        $news = News::getNewsByCategoryId($newsId); //поключаем функцию -> News.php
+        $newstopest =  News::getNewsTopest();//новость дня одна штука(rnd)
+//        $this->view->categories = $categories;
+        $this->view->newspost = $newspost;
+//        $this->view->news = $news;
+        $this->view->newstopest = $newstopest;
+
+
+        $this->view->generate('template_view.php', '/news/index.phtml'); //подключаем шаблон сайта -> View.php
+        return true;
+    }
 //
 //    public function actionView($categoryId)
 //    {

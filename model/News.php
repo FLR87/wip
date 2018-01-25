@@ -56,5 +56,34 @@ class News
             return $newsItems;
     }
 
+    public static function getNewsTopest()
+    {
+        $db = Db::getConnection();
+
+        $result = $db->query("SELECT * FROM news LEFT JOIN category ON news.cat_id = category.cat_id WHERE nw_is_top = 1 ORDER BY RAND() LIMIT 1 ");
+        //$result->setFetchMode(PDO::FETCH_ASSOC);
+
+        $newsItemsTopest = $result->fetchAll(PDO::FETCH_ASSOC);
+
+        return $newsItemsTopest;
+    }
+
+    public static function getNewsByNewsId($newsId)
+    {
+        $newsId = intval($newsId);
+
+        if ($newsId) {
+
+            $db = Db::getConnection();
+
+            $result = $db->query("SELECT * FROM news WHERE nw_id = '$newsId'");
+            //$result->setFetchMode(PDO::FETCH_ASSOC);
+
+            $newsItems = $result->fetchAll(PDO::FETCH_ASSOC);
+
+            return $newsItems;
+        }
+    }
+
 
 }

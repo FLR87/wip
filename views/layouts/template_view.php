@@ -1,57 +1,3 @@
-<!DOCTYPE>
-<!--<html>-->
-<!--<head>-->
-<!--    <meta charset="utf-8">-->
-<!--    <title>Интернет-магазин VELES|Анамегаторы в топливо</title>-->
-<!--    <link rel="stylesheet" href="/views/template/css/main.css">-->
-<!--    <div id="wrapper">-->
-<!--        <div id="header">-->
-<!--            <div>-->
-<!--                <table>-->
-<!--                    <td><a><img src="/views/template/images/home/head.jpg"></a></td>-->
-<!--                </table>-->
-<!--            </div>-->
-<!--            <div id="nav">-->
-<!--                <table>-->
-<!--                    <tr>-->
-<!--                        <td><a href="/" title="На главную">Главная</a></td>-->
-<!--                        <!--<td><a href="newsukt.html" title="Продукты">Продукция</a></td>-->
-<!--                        <td><a href="use.html" title="информация">Применение</a></td>-->
-<!--                        <td><a href="contakt.html" title="Контакты">Контакты</a></td>-->
-<!--                    </tr>-->
-<!--                </table>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</head>-->
-<!--<div id="wrapper">-->
-<!--    <div id="content">-->
-<!--        <div id="lmenu">-->
-<!---->
-<!--            <ul>-->
-<!--                <li><a href="index.phtml" title="На главную"><img src="/views/template/images/home/Logo1.jpg"></a></li>-->
-<!--                --><?php //foreach ($this->categories as $item): ?>
-<!--                    <li><a href='/catalog/--><?php //echo $item['cat_id'] ?><!--' title="">--><?php //echo $item['cat_name'] ?><!--</a>-->
-<!--                    </li>-->
-<!--                --><?php //endforeach; ?>
-<!--            </ul>-->
-<!--        </div>-->
-<!---->
-<!---->
-<!--        --><?//= $this->content ?>
-<!---->
-<!--        <footer>-->
-<!--            <div id="footer">-->
-<!--                <div class="contact">-->
-<!--                    <h5>Контакты:<br>email: itc.veles@gmail.com<br>тел.: +38 (066) 008-89-96</h5>-->
-<!--                </div>-->
-<!--                <div class="TM">-->
-<!--                    <h6><p>Интернет-магазин VELES 2017</p></h6>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </footer>-->
-<!--</html>-->
-
 <!doctype html>
 <html>
 
@@ -72,6 +18,10 @@
     <script type="text/javascript" src="\views\template\js\carousel-blog-settings.js"></script>
     <script type="text/javascript" src="\views\template\js\carousel-testimonials-settings.js"></script>
     <script type="text/javascript" src="\views\template\js\carousel-clients-settings.js"></script>
+    <script type="text/javascript" src="\views\template\js\portfolio-blog-slider-settings.js"></script>
+    <script type="text/javascript" src="\views\template\js\carousel-clients-settings.js"></script>
+
+
 </head>
 
 <body class="light-bg home">
@@ -88,22 +38,30 @@
             </div>
 
             <ul class="topsocial">
-                <li><a href="#"><i class="fa fa-linkedin-square"></i><div class="tooltip">LinkedIn</div></a>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i>
+                        <div class="tooltip">LinkedIn</div>
+                    </a>
                 </li>
-                <li><a href="#"><i class="fa fa-facebook"></i><div class="tooltip">Facebook</div></a>
+                <li><a href="#"><i class="fa fa-facebook"></i>
+                        <div class="tooltip">Facebook</div>
+                    </a>
                 </li>
-                <li><a href="#"><i class="fa fa-twitter"></i><div class="tooltip">Twitter</div></a>
+                <li><a href="#"><i class="fa fa-twitter"></i>
+                        <div class="tooltip">Twitter</div>
+                    </a>
                 </li>
-                <li><a href="#"><i class="fa fa-google-plus"></i><div class="tooltip">Google+</div></a>
+                <li><a href="#"><i class="fa fa-google-plus"></i>
+                        <div class="tooltip">Google+</div>
+                    </a>
                 </li>
             </ul>
 
             <ul class="topnav">
                 <li><a href="/"> Главная</a>
                 </li>
-                <li><a href="blog.html">Новости</a>
+                <li><a href="/catalog/<?php echo rand(1,5)?>">Новости</a>
                 </li>
-                <li><a href="contact.html">Контакты</a>
+                <li><a href="/contact">Контакты</a>
                 </li>
             </ul>
 
@@ -135,7 +93,7 @@
     <div class="footer-container">
 
         <div class="spacer"></div>
-
+        <?php if(isset($this->partners)):?>
         <div class="content-width">
             <div class="client-logos-container">
 
@@ -149,65 +107,23 @@
                 <div class="carousel">
                     <ul id="clients-carousel" class="column-container">
 
-                        <li class="">
-                            <div class="logo-outer">
-                                <div class="logo-inner">
-                                    <!-- Actual Logo -->
-                                    <img alt="" src="\views\template\images\client-logos\logo1.png">
-                                </div>
-                            </div>
-                        </li>
+                        <?php foreach ($this->partners as $item):?>
 
                         <li class="">
                             <div class="logo-outer">
                                 <div class="logo-inner">
                                     <!-- Actual Logo -->
-                                    <img alt="" src="\views\template\images\client-logos\logo2.png">
+                                    <img alt="" src="<?php echo $item['pt_img']?>">
                                 </div>
                             </div>
                         </li>
-
-                        <li class="">
-                            <div class="logo-outer">
-                                <div class="logo-inner">
-                                    <!-- Actual Logo -->
-                                    <img alt="" src="\views\template\images\client-logos\logo3.png">
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="">
-                            <div class="logo-outer">
-                                <div class="logo-inner">
-                                    <!-- Actual Logo -->
-                                    <img alt="" src="\views\template\images\client-logos\logo4.png">
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="">
-                            <div class="logo-outer">
-                                <div class="logo-inner">
-                                    <!-- Actual Logo -->
-                                    <img alt="" src="\views\template\images\client-logos\logo5.png">
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="">
-                            <div class="logo-outer">
-                                <div class="logo-inner">
-                                    <!-- Actual Logo -->
-                                    <img alt="" src="\views\template\images\client-logos\logo6.png">
-                                </div>
-                            </div>
-                        </li>
+                       <?php endforeach; ?>
 
                     </ul>
                 </div>
             </div>
         </div>
-
+        <?php endif; ?>
         <div class="footer-infobar">
             <div class="content-width">
                 <!-- Text -->
@@ -258,9 +174,9 @@
                     <ul class="footer-lower">
                         <li><a href="/">Главная</a>
                         </li>
-                        <li><a href="blog.html">Новости</a>
+                        <li><a href="/catalog/<?php echo rand(1,5)?>">Новости</a>
                         </li>
-                        <li><a href="contact.html">Контакты</a>
+                        <li><a href="/contact">Контакты</a>
                         </li>
                     </ul>
 
@@ -281,3 +197,4 @@
 
 </body>
 
+</html>

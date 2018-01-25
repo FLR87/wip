@@ -1,29 +1,7 @@
-<!--<body>-->
-<!--<div id="main">-->
-<!--    <table>-->
-<!--        <tr>-->
-<!--            <th id="main_title" colspan="4"><h1>Анамегаторы топлив Т4</h1></th>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<?php //foreach ($this->categories as $item): ?>
-<!--    <td class="main_card">-->
-<!--        <img src="--><?php //echo $item['cat_image'] ?><!--">-->
-<!--        <a href='/catalog/--><?php //echo $item['cat_id'] ?><!--' title="">--><?php //echo $item['cat_name'] ?><!--</a>-->
-<!--        <small>--><?php //echo $item['cat_small_discription'] ?><!--</small>-->
-<!--    </td>-->
-<?php //endforeach; ?>
-<!--        </tr>-->
-<!--    </table>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</body>-->
 
-<!--NEW INDEX-->
-
-<pre>
-<?php print_r($this); ?>
-</pre>
+<!--<pre>-->
+<?php //print_r($this); ?>
+<!--</pre>-->
 
 <div class="main-content">
     <div class="main-content-inner content-width">
@@ -93,26 +71,16 @@
             <ul id="portfolio-carousel" class="slider-container">
 
 
-                <!--                --><?php //foreach ($this->categories as $item): ?>
-                <!--                    <td class="main_card">-->
-                <!--                        <img src="--><?php //echo $item['cat_image']?><!--">-->
-                <!--                        <a href='/catalog/--><?php //echo $item['cat_id'] ?><!--' title="">-->
-                <?php //echo $item['cat_name'] ?><!--</a>-->
-                <!--                        <small>--><?php //echo $item['cat_small_discription']?><!--</small>-->
-                <!--                    </td>-->
-                <!--                --><?php //endforeach; ?>
-
-
                 <!-- One Fourth -->
                 <?php foreach ($this->newstop as $item): ?>
                     <li class="column-one-fourth portfolio-item branding">
                         <!-- Image -->
-                        <a href="<?php echo $item['cat_id'] ?>" class="image-link"><img alt=""
-                                                                                        src="<?php echo $item['cat_image'] ?>"
+                        <a href="/catalog/<?php echo $item['cat_id'] ?>" class="image-link"><img alt=""
+                                                                                        src="<?php echo $item['nw_image'] ?>"
                                                                                         class="fullwidth">
                         </a>
                         <!-- Title -->
-                        <h3><a href="#"><?php echo $item['nw_name'] ?></a></h3>
+                        <h3><a href="/catalog/<?php echo $item['nw_id'] ?>"><?php echo $item['nw_name'] ?></a></h3>
                         <!-- Tags -->
                         <div class="tags"><?php echo $item['cat_name'] ?></div>
                     </li>
@@ -138,18 +106,18 @@
                         <?php foreach ($this->newslatest as $item): ?>
                             <li class="column-one-fourth">
                                 <!-- Image -->
-                                <a href="<?php echo $item['cat_id'] ?>" class="image-link"><img alt=""
-                                                                                                src="<?php echo $item['cat_image'] ?>"
+                                <a href="/catalog/<?php echo $item['cat_id'] ?>" class="image-link"><img alt=""
+                                                                                                src="<?php echo $item['nw_image'] ?>"
                                                                                                 class="fullwidth">
                                 </a>
                                 <!-- Title -->
-                                <h3><a href="<?php echo $item['cat_id'] ?>"><?php echo $item['nw_name'] ?></a></h3>
+                                <h3><a href="/catalog/<?php echo $item['cat_id'] ?>"><?php echo $item['nw_name'] ?></a></h3>
                                 <!-- Date -->
                                 <div class="date"><?php echo $item['nw_date'] ?></div>
                                 <!-- Excerpt -->
                                 <p><?php echo $item['nw_small_discription'] ?></p>
                                 <!-- Read More Link -->
-                                <a href="<?php echo $item['cat_id'] ?>">Подробнее</a>
+                                <a href="/catalog/<?php echo $item['cat_id'] ?>">Подробнее</a>
                             </li>
                         <?php endforeach; ?>
                         <!-- END One Fourth -->

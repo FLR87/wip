@@ -789,7 +789,7 @@ body.home .main-content-inner {
 /* --------------------------------------------------------------------------------- */
 .home-banner {
 	width: 100%;
-	background-image: ; /* Put your banner background image here or use inline CSS for each slide */
+	background-image: /* Put your banner background image here or use inline CSS for each slide */
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-attachment: fixed;

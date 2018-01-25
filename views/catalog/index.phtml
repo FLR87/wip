@@ -1,28 +1,94 @@
-<pre>
-<?php print_r($this);?>
-</pre>
+<!--<pre>-->
+<?php //print_r($this); ?>
+<!--</pre>-->
 
-<body>
-<div id="t4">
-    <table>
-        <tr>
-            <th><h2>Анамегатор топлив и масел </h2></th>
-        </tr>
-        <tr>
-            <td class="t4_card">
-                <ol>
-                    <?php foreach ($this->news as $item): ?>
+<div class="main-content">
+    <div class="main-content-inner content-width">
 
-                        <li>
-                            <a href='/catalog/<?= $item['cat_id'] ?>/<?= $item['nw_short_name'] ?>'
-                               title=""><?php echo $item['nw_name'] ?></a>
-                        </li>
+
+        <!-- Main Column / Sidebar -->
+
+        <div class="column-container">
+
+
+            <!-- Main Column -->
+
+            <div class="column-three-qtr">
+
+                <!-- Blog Post -->
+                <?php foreach ($this->news as $item):?>
+                <div class="blog-post">
+                    <!-- Title -->
+                    <h1><a href="/news/<?php echo $item['nw_id'] ?>"><?php echo $item['nw_name'] ?></a></h1>
+                    <!-- Meta -->
+                    <div class="blog-meta">
+                        <div class="meta-item"><div class="meta-title published">Дата:</div><a href="/news/<?php echo $item['nw_id'] ?>"><?php echo $item['nw_date'] ?></a></div>
+                    </div>
+                    <!-- Image -->
+                    <a href="<?php echo $item['nw_image'] ?>" class="media image-link"><img alt="" src="<?php echo $item['nw_image'] ?>" class="fullwidth"></a>
+                    <!-- Excerpt -->
+                    <div class="blog-content">
+                        <p><?php echo $item['nw_small_discription'] ?></p>
+                        <!-- Read More Button -->
+                        <a href="/news/<?php echo $item['nw_id'] ?>" class="button accent">Читать далее</a>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+                <!-- END Blog Post -->
+
+
+            </div>
+
+            <!-- END Main Column -->
+
+
+
+            <!-- Sidebar -->
+
+            <div class="column-one-fourth sidebar">
+
+
+                <!-- Categories -->
+
+                <div class="sidebar-widget categories">
+                    <!-- Title -->
+                    <h3>Категории новостей</h3>
+                    <!-- Category Links -->
+                    <?php foreach ($this->categories as $items): ?>
+                    <a href="/catalog/<?php echo $items['cat_id'] ?>"><?php echo $items['cat_name'] ?></a>
                     <?php endforeach; ?>
-                </ol>
-            </td>
-        </tr>
-    </table>
+                </div>
+
+                <!-- END Categories -->
+
+
+                <!-- Latest Project -->
+                <?php foreach ($this->newstopest as $item): ?>
+                <div class="sidebar-widget project">
+                    <!-- Title -->
+                    <h3>Новость дня</h3>
+                    <!-- Image -->
+                    <a href="/news/<?php echo $item['nw_id'] ?>" class="image-link"><img alt="" src="<?php echo $item['nw_image'] ?>" class="fullwidth"></a>
+                    <!-- Project Title -->
+                    <h3 class="sub-title"><a href="/news/<?php echo $item['nw_id'] ?>"><?php echo $item['nw_name'] ?></a></h3>
+                    <!-- Tags -->
+                    <div class="tags"><?php echo $item['cat_name'] ?></div>
+                </div>
+                <?php endforeach; ?>
+                <!-- END Latest Project -->
+
+
+            </div>
+
+            <!-- END Sidebar -->
+
+
+        </div>
+
+        <!-- END Main Column / Sidebar -->
+
+
+    </div>
 </div>
-</div>
-</div>
-</body>
+
+<!-- END Main Content -->
